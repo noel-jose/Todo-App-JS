@@ -1,0 +1,29 @@
+@use './variables';
+
+.header{
+    padding-inline: 1rem;
+    padding-block: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__search{
+        padding: 5px 12px;
+        font-size: 14px;
+        line-height: 20px;
+        border: 1px solid gray;
+        border-radius: 6px;
+        min-width: 250px;
+    }
+
+    &__button{
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 0px;
+        font-size: 14px;
+        line-height: 20px;
+        color: white;
+        background: variables.$btn-primary-color;
+    }
+
+}
