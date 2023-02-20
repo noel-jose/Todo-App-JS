@@ -31,7 +31,7 @@ body {
   line-height: 20px;
   border: 1px solid gray;
   border-radius: 6px;
-  min-width: 250px;
+  max-width: 100%;
 }
 .header__button {
   padding: 6px 12px;
@@ -44,11 +44,24 @@ body {
 }
 
 .todos {
+  padding-inline: 1rem;
+  padding-block: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 .todo {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.todo__data {
+  width: 100%;
+  padding-inline: 2rem;
+}
+.todo__delete {
+  color: red;
 }/*# sourceMappingURL=main.css.map */

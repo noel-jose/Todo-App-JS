@@ -1,3 +1,17 @@
-.todo{
-    display: flex;
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  &__data {
+    width: 100%;
+    padding-inline: 2rem;
+
+
+  }
+
+  &__delete{
+    color: red;
+  }
 }
