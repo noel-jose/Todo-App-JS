@@ -11,6 +11,34 @@ const setTodos = (todo) => {
   localStorage.setItem("todos", JSON.stringify(todos));
 };
 
+const saveToUI = (todos) =>{
+    const todosContainer = document.querySelector('.todos');
+    if(todos.length != 0)
+    {
+        const todosInUI = todos.map(
+          (todo) => `<div class="todo">
+          <input type="checkbox" ${todo.completed ? "checked" : ""} class="todo__checkbox" />
+          <div class="todo__data">
+            <h4 class="todo__data__heading">${todo.name}</h4>
+            <p class="todo__data__desc">${todo.desc}</p>
+            <p></p>
+          </div>
+
+          <div class="todo__delete">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
+        </div>`
+        );
+        todosContainer.innerHTML = todosInUI.join(" ");
+
+    }
+    else
+        todosContainer.innerHTML = "<p>Enter a Todo </p>"
+
+}
+
+saveToUI(todos);
+
 addTodoButton = document.querySelector(".header__button");
 createTodoModal = document.querySelector(".modal");
 
@@ -31,10 +59,9 @@ createTodoForm.addEventListener("submit", (e) => {
   todo.completed = false;
   console.log(todo);
   setTodos(todo);
-
-  // added the todo to the
+  createTodoModal.classList.toggle("showcreateTodoForm");
+  // added the todo to the local storage
+  saveToUI(todos);
 });
 
-const title = document.getElementById("title");
 
-const formSubmit = (todo, setTodo) => {};
