@@ -64,4 +64,42 @@ body {
 }
 .todo__delete {
   color: red;
+}
+
+.modal {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background: white;
+}
+
+.showcreateTodoForm {
+  top: 0;
+}
+
+.todo__create {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 3rem auto;
+  gap: 10px;
+}
+.todo__create input {
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  max-width: 100%;
+}
+.todo__create button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  background: #2da44e;
 }/*# sourceMappingURL=main.css.map */

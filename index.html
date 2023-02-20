@@ -6,54 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TODO app</title>
     <link rel="stylesheet" href="./dist/css/main.css" />
-    <script src="https://kit.fontawesome.com/4bd9454cdf.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4bd9454cdf.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <section class="container">
       <section class="header">
-        <input class="header__search" type="text" id="search" placeholder="Search Todo">
+        <input
+          class="header__search"
+          type="text"
+          id="search"
+          placeholder="Search Todo"
+        />
         <button class="header__button">Add new</button>
       </section>
       <section class="todos">
         <div class="todo">
-            <input type="checkbox" class="todo__checkbox">
-            <div class="todo__data">
-                <h4 class="todo__data__heading">
-                    Heading
-                </h4>
-                <p class="todo__data__desc">Lorem ipsum <p>
-            </div>
-            <div class="todo__delete">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
+          <input type="checkbox" class="todo__checkbox" />
+          <div class="todo__data">
+            <h4 class="todo__data__heading">Heading</h4>
+            <p class="todo__data__desc">Lorem ipsum</p>
+            <p></p>
+          </div>
+
+          <div class="todo__delete">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
         </div>
 
         <div class="todo">
-            <input type="checkbox" class="todo__checkbox">
-            <div class="todo__data">
-                <h4 class="todo__data__heading">
-                    Heading
-                </h4>
-                <p class="todo__data__desc">Lorem ipsum <p>
-            </div>
-            <div class="todo__delete">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
+          <input type="checkbox" class="todo__checkbox" />
+          <div class="todo__data">
+            <h4 class="todo__data__heading">Heading</h4>
+            <p class="todo__data__desc">Lorem ipsum</p>
+            <p></p>
+          </div>
+
+          <div class="todo__delete">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
         </div>
 
         <div class="todo">
-            <input type="checkbox" class="todo__checkbox">
-            <div class="todo__data">
-                <h4 class="todo__data__heading">
-                    Heading
-                </h4>
-                <p class="todo__data__desc">Lorem ipsum <p>
-            </div>
-            <div class="todo__delete">
-                <i class="fa fa-trash" aria-hidden="true"></i>
-            </div>
+          <input type="checkbox" class="todo__checkbox" />
+          <div class="todo__data">
+            <h4 class="todo__data__heading">Heading</h4>
+            <p class="todo__data__desc">Lorem ipsum</p>
+            <p></p>
+          </div>
+
+          <div class="todo__delete">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </div>
         </div>
       </section>
     </section>
+    <div class="modal">
+      <form action="" class="todo__create">
+        <input id="title" onchange="" type="text" placeholder="Title" />
+        <input type="text" rows="2" placeholder="Description" />
+        <button type="submit">Create</button>
+      </form>
+    </div>
+    <script src="./js/app.js"></script>
   </body>
 </html>

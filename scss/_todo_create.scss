@@ -1,0 +1,30 @@
+@use "./variables";
+
+.modal{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background: white;
+}
+
+.showcreateTodoForm{
+    top: 0;
+}
+
+.todo__create{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 3rem auto;
+    gap: 10px;
+
+    input{
+        @include variables.inputTextBoxStyles;
+    }
+
+    button{
+        @include variables.btnStyles;
+    }
+}

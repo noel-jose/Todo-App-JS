@@ -1,1 +1,20 @@
 $btn-primary-color: #2da44e;
+
+@mixin inputTextBoxStyles{
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    max-width: 100%;
+}
+
+@mixin btnStyles{
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 0px;
+        font-size: 14px;
+        line-height: 20px;
+        color: white;
+        background: $btn-primary-color;
+}
