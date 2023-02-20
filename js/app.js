@@ -6,6 +6,10 @@ const getTodos = () => {
 
 let todos = getTodos() || [];
 
+const saveTodos = (todos) =>{
+  localStorage.setItem("todos", JSON.stringify(todos));
+}
+
 const setTodos = (todo) => {
   todos.unshift(todo);
   localStorage.setItem("todos", JSON.stringify(todos));
@@ -24,7 +28,7 @@ const saveToUI = (todos) =>{
             <p></p>
           </div>
 
-          <div class="todo__delete">
+          <div class="todo__delete" onclick=deleteTodo(${todo.id})>
             <i class="fa fa-trash" aria-hidden="true"></i>
           </div>
         </div>`
@@ -58,10 +62,20 @@ createTodoForm.addEventListener("submit", (e) => {
   todo.desc = createTodoForm.elements[1].value;
   todo.completed = false;
   console.log(todo);
-  setTodos(todo);
-  createTodoModal.classList.toggle("showcreateTodoForm");
   // added the todo to the local storage
+  setTodos(todo);
+  createTodoForm.reset();
+  // we are going to hide the CreateTodoForm modal
+  createTodoModal.classList.toggle("showcreateTodoForm");
+  // now we are going to show the updated todo list to the user
   saveToUI(todos);
 });
+
+const deleteTodo = (id) =>{
+    newTodosList = todos.filter((todo)=>todo.id !=id);
+    saveTodos(newTodosList);
+    todos = getTodos()
+    saveToUI(todos);
+}
 
 
