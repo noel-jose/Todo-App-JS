@@ -24,8 +24,13 @@ const saveToUI = (todos) => {
             todo.completed ? "checked" : ""
           } class="todo__checkbox" onclick=markComplete(${todo.id}) />
           <div class="todo__data">
-            <h4 class="todo__data__heading">${todo.name}</h4>
-            <p class="todo__data__desc">${todo.desc}</p>
+            <h4 class="todo__data__heading ${
+              todo.completed ? " strike" : ""
+            }" > ${todo.name} </h4>
+
+            <p class="todo__data__desc ${todo.completed ? " erase" : ""}" > ${
+        todo.desc
+      }</p>
             <p></p>
           </div>
 
@@ -83,6 +88,13 @@ const markComplete = (id) => {
       todo.completed = !todo.completed;
     }
   });
+  todos = sortTodos(todos);
   saveTodos(todos);
   saveToUI(todos);
 };
+
+// funtion to sort the todos based on the completed status
+const sortTodos = (todos) => {
+    todos.sort((a,b)=>a.completed - b.completed);
+    return todos;
+}
