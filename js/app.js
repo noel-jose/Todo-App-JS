@@ -139,3 +139,22 @@ editForm.addEventListener("submit", (e) => {
   // closing the editform
   modal1.classList.toggle("showEditForm");
 });
+
+
+const searchInput = document.getElementById("search");
+console.log(searchInput);
+searchInput.addEventListener("input",(e)=>{
+    searchText = e.target.value;
+    console.log(searchText);
+    let filteredTodos = todos.filter((todo)=>{
+        const name = todo.name
+        const desc = todo.desc;
+        if(name.includes(searchText)|| desc.includes(searchText))
+            return todo;
+    })
+    console.log(filteredTodos);
+    saveToUI(filteredTodos);
+    if(searchText == " ")
+    saveToUI(todos);
+    // searchInput.reset();
+})

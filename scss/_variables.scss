@@ -27,3 +27,7 @@ $btn-primary-color: #2da44e;
     width: 100%;
     background: white;
 }
+
+@mixin transitions{
+    transition:all s ease-in;
+}

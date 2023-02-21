@@ -119,6 +119,7 @@ body {
   z-index: 2;
   width: 100%;
   background: white;
+  transition: all s ease-in;
 }
 
 .showEditForm {

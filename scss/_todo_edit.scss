@@ -1,6 +1,7 @@
 @use './variables';
 .modal1{
     @include variables.modalStyles;
+    @include variables.transitions;
 }
 
 .showEditForm{
