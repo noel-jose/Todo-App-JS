@@ -1,7 +1,11 @@
 @use './variables';
 .modal1{
     @include variables.modalStyles;
-    @include variables.transitions;
+}
+
+
+.showDeleteConfirm{
+    top: 0;
 }
 
 .showEditForm{
@@ -19,7 +23,4 @@
         @include variables.inputTextBoxStyles;
     }
 
-    button{
-        @include variables.btnStyles;
-    }
 }

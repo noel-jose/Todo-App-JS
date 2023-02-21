@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 10px;
 
   &__data {
     width: 100%;
@@ -13,6 +14,13 @@
 
   &__delete{
     color: red;
+    display: none;
+  }
+
+  &:hover{
+    .todo__delete{
+        display: block;
+    }
   }
 }
 

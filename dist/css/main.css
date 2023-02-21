@@ -5,7 +5,9 @@
   margin: 0;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: "Poppins", sans-serif;
 }
 
@@ -13,14 +15,46 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.button_1 {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  background: #2da44e;
+}
+
+.button_2 {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 0px;
+  font-size: 14px;
+  line-height: 20px;
+  color: white;
+  background: #2da44e;
+  background: #cf222e;
+}
+
 .container {
-  margin-inline: 1rem;
-  margin-block: 3rem;
+  padding-inline: 1rem;
+  padding-block: 3rem;
+  height: 100vh;
 }
 
 .header {
   padding-inline: 1rem;
   padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.header h1 {
+  margin-bottom: 1rem;
+}
+.header div {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,6 +91,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 10px;
 }
 .todo__data {
   width: 100%;
@@ -64,6 +99,10 @@ body {
 }
 .todo__delete {
   color: red;
+  display: none;
+}
+.todo:hover .todo__delete {
+  display: block;
 }
 
 .strike {
@@ -81,6 +120,7 @@ body {
   z-index: 2;
   width: 100%;
   background: white;
+  transition: top 0.2s linear;
 }
 
 .showcreateTodoForm {
@@ -102,15 +142,6 @@ body {
   border-radius: 6px;
   max-width: 100%;
 }
-.todo__create button {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 0px;
-  font-size: 14px;
-  line-height: 20px;
-  color: white;
-  background: #2da44e;
-}
 
 .modal1 {
   position: fixed;
@@ -119,7 +150,10 @@ body {
   z-index: 2;
   width: 100%;
   background: white;
-  transition: all s ease-in;
+}
+
+.showDeleteConfirm {
+  top: 0;
 }
 
 .showEditForm {
@@ -141,12 +175,20 @@ body {
   border-radius: 6px;
   max-width: 100%;
 }
-.todo__edit button {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: 0px;
-  font-size: 14px;
-  line-height: 20px;
-  color: white;
-  background: #2da44e;
+
+.modal2 {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  background: white;
+}
+
+.todo__delete_confirm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 3rem auto;
+  gap: 10px;
 }/*# sourceMappingURL=main.css.map */

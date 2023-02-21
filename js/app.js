@@ -40,7 +40,7 @@ const saveToUI = (todos) => {
         </div>`
     );
     todosContainer.innerHTML = todosInUI.join(" ");
-  } else todosContainer.innerHTML = "<p>Enter a Todo </p>";
+  } else todosContainer.innerHTML = "<p>No Todos </p>";
 };
 
 saveToUI(todos);
@@ -52,6 +52,13 @@ createTodoModal = document.querySelector(".modal");
 addTodoButton.addEventListener("click", () => {
   console.log(createTodoModal.classList.toggle("showcreateTodoForm"));
 });
+
+const closeCreateATodoModal = () =>{
+    console.log("CLicked the button");
+    createTodoModal.classList.toggle("showcreateTodoForm");
+    console.log(createTodoModal.classList);
+}
+
 //accessing the form to create todo
 const createTodoForm = document.querySelector(".todo__create");
 
@@ -75,6 +82,9 @@ createTodoForm.addEventListener("submit", (e) => {
 
 // function to delete a todo
 const deleteTodo = (id) => {
+//   modal2 = document.querySelector('.modal2');
+//   console.log(modal2);
+//   modal2.classList.toggle('showDeleteConfirm');
   newTodosList = todos.filter((todo) => todo.id != id);
   saveTodos(newTodosList);
   todos = getTodos();
@@ -101,6 +111,10 @@ const sortTodos = (todos) => {
 
 modal1 = document.querySelector(".modal1");
 editForm = modal1.firstElementChild;
+
+const closeEditATodoModal = () =>{
+    modal1.classList.toggle("showEditForm");
+}
 
 
 // function to open the modal to edit the selected item
@@ -141,6 +155,7 @@ editForm.addEventListener("submit", (e) => {
 });
 
 
+// searching functionality
 const searchInput = document.getElementById("search");
 console.log(searchInput);
 searchInput.addEventListener("input",(e)=>{
@@ -158,3 +173,9 @@ searchInput.addEventListener("input",(e)=>{
     saveToUI(todos);
     // searchInput.reset();
 })
+
+
+const modal2 = document.querySelector('.modal2');
+const showDeleteConfirmation = () =>{
+    modal2.classList.toggle("showDeleteConfirmation");
+}

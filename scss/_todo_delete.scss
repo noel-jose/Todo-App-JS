@@ -1,22 +1,13 @@
 @use "./variables";
 
-.modal {
+.modal2 {
   @include variables.modalStyles;
-  transition: top 0.2s linear;
 }
 
-.showcreateTodoForm {
-  top: 0;
-}
-
-.todo__create {
+.todo__delete_confirm {
   display: flex;
   flex-direction: column;
   width: 80%;
   margin: 3rem auto;
   gap: 10px;
-
-  input {
-    @include variables.inputTextBoxStyles;
-  }
 }

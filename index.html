@@ -14,13 +14,16 @@
   <body>
     <section class="container">
       <section class="header">
-        <input
-          class="header__search"
-          type="text"
-          id="search"
-          placeholder="Search Todo"
-        />
-        <button class="header__button">Add new</button>
+        <h1>Todo App</h1>
+        <div>
+          <input
+            class="header__search"
+            type="text"
+            id="search"
+            placeholder="Search Todo"
+          />
+          <button class="header__button">Add new</button>
+        </div>
       </section>
       <section class="todos">
         <div class="todo">
@@ -65,18 +68,40 @@
     </section>
     <div class="modal">
       <form class="todo__create">
+        <h4>Create Todo</h4>
         <input id="title" onchange="" type="text" placeholder="Title" />
         <input type="text" rows="2" placeholder="Description" />
-        <button type="submit">Create</button>
+        <button type="submit" class="button_1">Create</button>
+        <button
+          type="button" class="button_2"
+          onclick="closeCreateATodoModal()"
+        >
+          Cancel
+        </button>
       </form>
     </div>
 
     <div class="modal1">
       <form class="todo__edit">
+        <h4>Edit Todo</h4>
         <input onchange="" type="text" placeholder="Title" />
         <input type="text" rows="2" placeholder="Description" />
-        <input type="text" hidden>
-        <button type="submit">Edit</button>
+        <input type="text" hidden />
+        <button type="submit" class="button_1">Edit</button>
+        <button
+          type="button"
+          class="button_2"
+          onclick="closeEditATodoModal()"
+        >
+          Cancel
+        </button>
+      </form>
+    </div>
+    <div class="modal2">
+      <form class="todo__delete_confirm">
+        <p>Do you wish to delete the todo ?</p>
+        <button class="button_1" type="submit">Yes</button>
+        <button class="button_2" >No</button>
       </form>
     </div>
     <script src="./js/app.js"></script>

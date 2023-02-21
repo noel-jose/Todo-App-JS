@@ -1,18 +1,29 @@
-@use './variables';
+@use "./variables";
 
-.header{
-    padding-inline: 1rem;
-    padding-block: 2rem;
+.header {
+  padding-inline: 1rem;
+  padding-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+
+  h1{
+    margin-bottom: 1rem;
+  }
+
+  div {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+  }
 
-    &__search{
-        @include variables.inputTextBoxStyles;
-    }
+  &__search {
+    @include variables.inputTextBoxStyles;
+  }
 
-    &__button{
-       @include variables.btnStyles;
-    }
-
+  &__button {
+    @include variables.btnStyles;
+  }
 }
