@@ -1,14 +1,13 @@
-@use "./variables";
-
-.modal{
+@use './variables';
+.modal1{
     @include variables.modalStyles;
 }
 
-.showcreateTodoForm{
+.showEditForm{
     top: 0;
 }
 
-.todo__create{
+.todo__edit{
     display: flex;
     flex-direction: column;
     width: 80%;

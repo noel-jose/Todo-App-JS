@@ -23,7 +23,7 @@ const saveToUI = (todos) => {
           <input type="checkbox" ${
             todo.completed ? "checked" : ""
           } class="todo__checkbox" onclick=markComplete(${todo.id}) />
-          <div class="todo__data">
+          <div class="todo__data" onclick=openEditForm(${todo.id})>
             <h4 class="todo__data__heading ${
               todo.completed ? " strike" : ""
             }" > ${todo.name} </h4>
@@ -95,6 +95,47 @@ const markComplete = (id) => {
 
 // funtion to sort the todos based on the completed status
 const sortTodos = (todos) => {
-    todos.sort((a,b)=>a.completed - b.completed);
-    return todos;
-}
+  todos.sort((a, b) => a.completed - b.completed);
+  return todos;
+};
+
+modal1 = document.querySelector(".modal1");
+editForm = modal1.firstElementChild;
+
+
+// function to open the modal to edit the selected item
+const openEditForm = (id) => {
+  console.log("Open Edit form function called for " + id);
+  
+  console.log(modal1);
+  const todotoEdit = todos.find((todo) => todo.id == id);
+  console.log(todotoEdit);
+  // shows the edit form 
+  modal1.classList.toggle("showEditForm");
+  //injects the current value of the selected todo
+  editForm.elements[0].value = todotoEdit.name;
+  editForm.elements[1].value = todotoEdit.desc;
+  editForm.elements[2].value = todotoEdit.id
+};
+
+editForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // reading values from the user submitted form
+  let newname = editForm.elements[0].value;
+  let newdesc = editForm.elements[1].value;
+  let idtoEdit = editForm.elements[2].value;
+  // creating a new todo list with the updated values 
+  let newTodos = todos.map((todo) =>
+    todo.id == idtoEdit ? { ...todo, name: newname, desc: newdesc } : todo
+  );
+  // saving the new todos to the local storage
+  saveTodos(newTodos);
+  // fetching the new todos
+  todos = getTodos();
+  // saving the newly fetched todos to the UI
+  saveToUI(todos);
+  // resetting the editForm
+  editForm.reset();
+  // closing the editform
+  modal1.classList.toggle("showEditForm");
+});

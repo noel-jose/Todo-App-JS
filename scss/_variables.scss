@@ -18,3 +18,12 @@ $btn-primary-color: #2da44e;
         color: white;
         background: $btn-primary-color;
 }
+
+@mixin modalStyles{
+    position: fixed;
+    top: -100%;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    background: white;
+}
