@@ -109,8 +109,11 @@ body {
   padding-inline: 2rem;
 }
 .todo__delete {
-  color: red;
+  color: #212959;
   display: none;
+  padding: 12px 15px;
+  background: #fff;
+  border-radius: 50%;
 }
 .todo:hover .todo__delete {
   display: block;
