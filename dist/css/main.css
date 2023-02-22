@@ -91,6 +91,12 @@ body {
   line-height: 20px;
   color: white;
   background: #627cf3;
+  padding: 10px 14px;
+}
+@media screen and (min-width: 768px) {
+  .header__button {
+    padding: 10px 24px;
+  }
 }
 
 .todos {
