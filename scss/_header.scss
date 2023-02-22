@@ -8,7 +8,7 @@
   align-items: start;
   justify-content: space-between;
 
-  h1{
+  h1 {
     margin-bottom: 1rem;
     font-size: 2rem;
   }
@@ -22,10 +22,16 @@
 
   &__search {
     @include variables.inputTextBoxStyles;
-    width: 70%;
+    width: 60%;
 
-    &:focus{
-        outline: none;
+    &:focus {
+      outline: none;
+    }
+
+    @media screen and (min-width: variables.$md) {
+      & {
+        width: 70%;
+      }
     }
   }
 
