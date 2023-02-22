@@ -1,17 +1,21 @@
-$btn-primary-color: #2da44e;
-$btn-danger-color: #cf222e;
+$btn-primary-color: #627cf3;
+$btn-danger-color: #212959;
+$bg-color: #f2f4f6;
+$sm : 425px;
+$md : 768px;
+$lg : 1440px;
 
 @mixin inputTextBoxStyles {
-  padding: 5px 12px;
+  padding: 10px 24px;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid gray;
   border-radius: 6px;
   max-width: 100%;
+  border: 0px;
 }
 
 @mixin btnStyles {
-  padding: 6px 12px;
+  padding: 10px 24px;
   border-radius: 6px;
   border: 0px;
   font-size: 14px;
@@ -26,7 +30,8 @@ $btn-danger-color: #cf222e;
   left: 0;
   z-index: 2;
   width: 100%;
-  background: white;
+  background-color: $bg-color;
+  transition: top 0.2s linear;
 }
 
 @mixin transitions {

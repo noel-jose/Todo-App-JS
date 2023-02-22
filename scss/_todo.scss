@@ -8,26 +8,33 @@
   &__data {
     width: 100%;
     padding-inline: 2rem;
-
-
   }
 
-  &__delete{
+  &__delete {
     color: red;
     display: none;
   }
 
-  &:hover{
-    .todo__delete{
-        display: block;
+  &:hover {
+    .todo__delete {
+      display: block;
     }
+  }
+
+  &__checkbox {
+    display: inline;
+    scale: 1.5;
+    background: transparent;
+    outline: 0;
+    border: 0px !important;
+    box-shadow: none;
   }
 }
 
 .strike {
-    text-decoration:line-through !important;
+  text-decoration: line-through !important;
 }
 
-.erase{
-    display: none;
+.erase {
+  display: none;
 }

@@ -21,6 +21,11 @@
 
   &__search {
     @include variables.inputTextBoxStyles;
+    width: 80%;
+
+    &:focus{
+        outline: none;
+    }
   }
 
   &__button {

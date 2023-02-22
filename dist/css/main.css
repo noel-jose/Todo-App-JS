@@ -16,30 +16,31 @@ body {
 }
 
 .button_1 {
-  padding: 6px 12px;
+  padding: 10px 24px;
   border-radius: 6px;
   border: 0px;
   font-size: 14px;
   line-height: 20px;
   color: white;
-  background: #2da44e;
+  background: #627cf3;
 }
 
 .button_2 {
-  padding: 6px 12px;
+  padding: 10px 24px;
   border-radius: 6px;
   border: 0px;
   font-size: 14px;
   line-height: 20px;
   color: white;
-  background: #2da44e;
-  background: #cf222e;
+  background: #627cf3;
+  background: #212959;
 }
 
 .container {
   padding-inline: 1rem;
   padding-block: 3rem;
   height: 100vh;
+  background: #f2f4f6;
 }
 
 .header {
@@ -60,21 +61,25 @@ body {
   justify-content: space-between;
 }
 .header__search {
-  padding: 5px 12px;
+  padding: 10px 24px;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid gray;
   border-radius: 6px;
   max-width: 100%;
+  border: 0px;
+  width: 80%;
+}
+.header__search:focus {
+  outline: none;
 }
 .header__button {
-  padding: 6px 12px;
+  padding: 10px 24px;
   border-radius: 6px;
   border: 0px;
   font-size: 14px;
   line-height: 20px;
   color: white;
-  background: #2da44e;
+  background: #627cf3;
 }
 
 .todos {
@@ -104,6 +109,14 @@ body {
 .todo:hover .todo__delete {
   display: block;
 }
+.todo__checkbox {
+  display: inline;
+  scale: 1.5;
+  background: transparent;
+  outline: 0;
+  border: 0px !important;
+  box-shadow: none;
+}
 
 .strike {
   text-decoration: line-through !important;
@@ -119,7 +132,8 @@ body {
   left: 0;
   z-index: 2;
   width: 100%;
-  background: white;
+  background-color: #f2f4f6;
+  transition: top 0.2s linear;
   transition: top 0.2s linear;
 }
 
@@ -135,12 +149,12 @@ body {
   gap: 10px;
 }
 .todo__create input {
-  padding: 5px 12px;
+  padding: 10px 24px;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid gray;
   border-radius: 6px;
   max-width: 100%;
+  border: 0px;
 }
 
 .modal1 {
@@ -149,7 +163,8 @@ body {
   left: 0;
   z-index: 2;
   width: 100%;
-  background: white;
+  background-color: #f2f4f6;
+  transition: top 0.2s linear;
 }
 
 .showDeleteConfirm {
@@ -168,12 +183,12 @@ body {
   gap: 10px;
 }
 .todo__edit input {
-  padding: 5px 12px;
+  padding: 10px 24px;
   font-size: 14px;
   line-height: 20px;
-  border: 1px solid gray;
   border-radius: 6px;
   max-width: 100%;
+  border: 0px;
 }
 
 .modal2 {
@@ -182,7 +197,8 @@ body {
   left: 0;
   z-index: 2;
   width: 100%;
-  background: white;
+  background-color: #f2f4f6;
+  transition: top 0.2s linear;
 }
 
 .todo__delete_confirm {
@@ -191,4 +207,8 @@ body {
   width: 80%;
   margin: 3rem auto;
   gap: 10px;
+}
+
+.showDeleteConfirmation {
+  top: 0;
 }/*# sourceMappingURL=main.css.map */

@@ -34,7 +34,9 @@ const saveToUI = (todos) => {
             <p></p>
           </div>
 
-          <div class="todo__delete" onclick=deleteTodo(${todo.id})>
+          <div class="todo__delete" onclick='showDeleteConfirmation(${
+            todo.id
+          })'>
             <i class="fa fa-trash" aria-hidden="true"></i>
           </div>
         </div>`
@@ -53,11 +55,11 @@ addTodoButton.addEventListener("click", () => {
   console.log(createTodoModal.classList.toggle("showcreateTodoForm"));
 });
 
-const closeCreateATodoModal = () =>{
-    console.log("CLicked the button");
-    createTodoModal.classList.toggle("showcreateTodoForm");
-    console.log(createTodoModal.classList);
-}
+const closeCreateATodoModal = () => {
+  console.log("CLicked the button");
+  createTodoModal.classList.toggle("showcreateTodoForm");
+  console.log(createTodoModal.classList);
+};
 
 //accessing the form to create todo
 const createTodoForm = document.querySelector(".todo__create");
@@ -82,9 +84,9 @@ createTodoForm.addEventListener("submit", (e) => {
 
 // function to delete a todo
 const deleteTodo = (id) => {
-//   modal2 = document.querySelector('.modal2');
-//   console.log(modal2);
-//   modal2.classList.toggle('showDeleteConfirm');
+  //   modal2 = document.querySelector('.modal2');
+  //   console.log(modal2);
+  //   modal2.classList.toggle('showDeleteConfirm');
   newTodosList = todos.filter((todo) => todo.id != id);
   saveTodos(newTodosList);
   todos = getTodos();
@@ -112,24 +114,23 @@ const sortTodos = (todos) => {
 modal1 = document.querySelector(".modal1");
 editForm = modal1.firstElementChild;
 
-const closeEditATodoModal = () =>{
-    modal1.classList.toggle("showEditForm");
-}
-
+const closeEditATodoModal = () => {
+  modal1.classList.toggle("showEditForm");
+};
 
 // function to open the modal to edit the selected item
 const openEditForm = (id) => {
   console.log("Open Edit form function called for " + id);
-  
+
   console.log(modal1);
   const todotoEdit = todos.find((todo) => todo.id == id);
   console.log(todotoEdit);
-  // shows the edit form 
+  // shows the edit form
   modal1.classList.toggle("showEditForm");
   //injects the current value of the selected todo
   editForm.elements[0].value = todotoEdit.name;
   editForm.elements[1].value = todotoEdit.desc;
-  editForm.elements[2].value = todotoEdit.id
+  editForm.elements[2].value = todotoEdit.id;
 };
 
 editForm.addEventListener("submit", (e) => {
@@ -138,7 +139,7 @@ editForm.addEventListener("submit", (e) => {
   let newname = editForm.elements[0].value;
   let newdesc = editForm.elements[1].value;
   let idtoEdit = editForm.elements[2].value;
-  // creating a new todo list with the updated values 
+  // creating a new todo list with the updated values
   let newTodos = todos.map((todo) =>
     todo.id == idtoEdit ? { ...todo, name: newname, desc: newdesc } : todo
   );
@@ -154,28 +155,37 @@ editForm.addEventListener("submit", (e) => {
   modal1.classList.toggle("showEditForm");
 });
 
-
 // searching functionality
 const searchInput = document.getElementById("search");
 console.log(searchInput);
-searchInput.addEventListener("input",(e)=>{
-    searchText = e.target.value;
-    console.log(searchText);
-    let filteredTodos = todos.filter((todo)=>{
-        const name = todo.name
-        const desc = todo.desc;
-        if(name.includes(searchText)|| desc.includes(searchText))
-            return todo;
-    })
-    console.log(filteredTodos);
-    saveToUI(filteredTodos);
-    if(searchText == " ")
-    saveToUI(todos);
-    // searchInput.reset();
-})
+searchInput.addEventListener("input", (e) => {
+  searchText = e.target.value;
+  console.log(searchText);
+  let filteredTodos = todos.filter((todo) => {
+    const name = todo.name;
+    const desc = todo.desc;
+    if (name.includes(searchText) || desc.includes(searchText)) return todo;
+  });
+  console.log(filteredTodos);
+  saveToUI(filteredTodos);
+  if (searchText == " ") saveToUI(todos);
+  // searchInput.reset();
+});
 
-
-const modal2 = document.querySelector('.modal2');
-const showDeleteConfirmation = () =>{
+const modal2 = document.querySelector(".modal2");
+const showDeleteConfirmation = (id) => {
+  console.log(modal2);
+  modal2.classList.toggle("showDeleteConfirmation");
+  deleteForm = modal2.firstElementChild;
+  console.log(deleteForm);
+  deleteForm.addEventListener("submit", (e) => {
+    console.log("The delete confirmtion submitted");
+    e.preventDefault();
+    deleteTodo(id);
     modal2.classList.toggle("showDeleteConfirmation");
-}
+  });
+};
+
+const closeDeleteConfirmation = () => {
+  modal2.classList.toggle("showDeleteConfirmation");
+};
