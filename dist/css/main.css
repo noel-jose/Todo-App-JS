@@ -42,6 +42,11 @@ body {
   height: 100vh;
   background: #f2f4f6;
 }
+@media screen and (min-width: 768px) {
+  .container {
+    padding-inline: 8rem;
+  }
+}
 
 .header {
   padding-inline: 1rem;
@@ -53,6 +58,7 @@ body {
 }
 .header h1 {
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 .header div {
   width: 100%;
@@ -67,7 +73,7 @@ body {
   border-radius: 6px;
   max-width: 100%;
   border: 0px;
-  width: 80%;
+  width: 70%;
 }
 .header__search:focus {
   outline: none;

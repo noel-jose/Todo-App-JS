@@ -10,6 +10,7 @@
 
   h1{
     margin-bottom: 1rem;
+    font-size: 2rem;
   }
 
   div {
@@ -21,7 +22,7 @@
 
   &__search {
     @include variables.inputTextBoxStyles;
-    width: 80%;
+    width: 70%;
 
     &:focus{
         outline: none;
